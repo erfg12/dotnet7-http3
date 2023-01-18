@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -52,6 +52,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'dotnet7-http3'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_3a41dde4e0404371b9ac95205dfe2462 }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2DCBE7AC5F8F4EAD883FDC48D68D3C13 }}
           package: .
